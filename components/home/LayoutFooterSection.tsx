@@ -16,6 +16,12 @@ export const LayoutFooterSection = () => {
 
               <h3 className="text-2xl">{footer.brandName}</h3>
             </Link>
+            <div className="mt-3 ml-1 text-muted-foreground text-sm">
+              Internal CRM tool for teams. Ready to build, extend, and ship.
+            </div>
+            <div className="mt-1 ml-1 text-muted-foreground text-xs">
+              Owner: Chirag Dodiya &middot; <a href="mailto:chirag@bidx.ai" className="underline hover:text-primary">chirag@bidx.ai</a>
+            </div>
           </div>
 
           {footer.columns.map((column) => (
@@ -44,6 +50,7 @@ export const LayoutFooterSection = () => {
               {footer.attribution.label}
             </Link>
           </h3>
+          <div className="text-xs mt-1 text-muted-foreground">Brand: PulseCRM</div>
         </section>
       </div>
     </footer>
