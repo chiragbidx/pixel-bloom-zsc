@@ -11,10 +11,8 @@ import { LayoutSponsorsSection } from "../components/home/LayoutSponsorsSection"
 import { LayoutTeamSection } from "../components/home/LayoutTeamSection";
 import { LayoutTestimonialSection } from "../components/home/LayoutTestimonialSection";
 import { Navbar as LayoutNavbar } from "@/components/layout/navbar";
-import { getAuthSession } from "@/lib/auth/session";
 
 export default async function Home() {
-  const session = await getAuthSession();
   // Simple toggles so agents/users can hide sections without touching JSX.
   // Use ONLY_SECTIONS (comma list) to whitelist, or HIDE_SECTIONS to blacklist.
   const only = (process.env.ONLY_SECTIONS ?? "")
@@ -47,7 +45,7 @@ export default async function Home() {
 
   return (
     <div className="home-dark min-h-screen bg-gradient-to-b from-zinc-50 via-white to-[#ffe6d8] text-zinc-900 transition-colors dark:from-[#120d0b] dark:via-[#16100d] dark:to-[#1f1612] dark:text-[#f7efe8]">
-      <LayoutNavbar isLoggedIn={!!session} />
+      <LayoutNavbar isLoggedIn={false} />
       <main className="flex min-h-screen w-full flex-col gap-12 px-6 py-12 sm:px-10 lg:px-16 lg:max-w-[1600px] lg:mx-auto">
         {visibleSections.map(([, node]) => node)}
       </main>
